@@ -1,1 +1,2 @@
-export {Button as Button} from './Button/Button';
+export {Button as Button} from './Buttons/Button';
+export {TextInput as TextInput} from './Inputs/TextInput';
