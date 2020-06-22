@@ -1,2 +1,2 @@
-export {Button as Button} from './Buttons/Button';
-export {TextInput as TextInput} from './Inputs/TextInput';
+export { Button } from './Buttons/Button';
+export { Input } from './Input/Input.js';
