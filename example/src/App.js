@@ -8,7 +8,6 @@ export default class App extends Component {
     super(props);
     this.state = {
       inputText: "",
-      inputNumber: "",
     }
   }
   handleInputChange(text) {
@@ -17,6 +16,7 @@ export default class App extends Component {
     });
   }
   handleInputNumberChange(number) {
+    console.log("desde app ", number);
     this.setState({
       inputNumber: number
     });
