@@ -44,13 +44,13 @@ import React, { Component } from 'react';
 import { Input } from 'svelascocodingchallenge';
 
 class Example extends Component {
-  handleInputNumberChange(e) {
+  handleInputNumberChange(number) {
     this.setState({
-      inputNumber: e.target.value
+      inputNumber: number
     });
   }
   render() {
-    return <Input type="number" value={this.state.inputNumber} handleChange={this.handleInputNumberChange.bind(this)} placeholder="number Input"/>
+    return <Input type="number" value={this.state.inputNumber} handleChange={this.handleInputNumberChange.bind(this)} placeholder="Please enter your Phone number"/>
   }
 }
 

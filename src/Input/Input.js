@@ -32,8 +32,9 @@ export class Input extends Component{
     }
     checkNumbers(event){
         const inputChar = (event.target.validity.valid) ? event.target.value : event.target.value.replace(/\D/,'');
-        console.log(inputChar);
-        this.props.handleChange(inputChar);
+        console.log();
+        // TODO: fix formatting because on bug numbers returns NaN
+        this.props.handleChange(new Intl.NumberFormat().format(inputChar));
     }
     renderInput(){
     switch (this.props.type) {

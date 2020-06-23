@@ -17,7 +17,6 @@ export default class App extends Component {
     });
   }
   handleInputNumberChange(number) {
-    console.log(number)
     this.setState({
       inputNumber: number
     });
@@ -26,7 +25,10 @@ export default class App extends Component {
     return (
       <div>
         <div>
-          <Button disabled style="primary" handleClick={() => console.log('funciona')}>
+          <Button disabled handleClick={() => console.log('funciona pero no deberia pq es disabled')}>
+            Disabled
+          </Button>
+          <Button type="primary" handleClick={() => console.log('funciona Boton principal')}>
             Primary
           </Button>
           <Button handleClick={() => console.log('funciona')}>
@@ -34,8 +36,8 @@ export default class App extends Component {
           </Button>
         </div>
         <div>
-          <Input value={this.state.inputText} handleChange={this.handleInputChange.bind(this)} placeholder="Text Input"/>
-          <Input type="number" value={this.state.inputNumber} handleChange={this.handleInputNumberChange.bind(this)} placeholder="number Input"/>
+          <Input value={this.state.inputText} handleChange={this.handleInputChange.bind(this)} placeholder="Example Text Input"/>
+          <Input type="number" value={this.state.inputNumber} handleChange={this.handleInputNumberChange.bind(this)} placeholder="Example number Input"/>
         </div>
       </div>
     )
