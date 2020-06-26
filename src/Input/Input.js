@@ -30,25 +30,32 @@ export class Input extends Component{
         this.state = {
         }
     }
+    
     checkNumbers(e){
         let numberValue = e.target.value;
-        if (Number(numberValue)) {
-            this.props.handleChange(numberValue)
+        if ((Number(numberValue)) || (numberValue == "")) {
+            // TODO: let formattedNumber = new Intl.NumberFormat().format(numberValue);
+            this.props.handleChange(numberValue);
         }
-        // TODO: let formattedNumber = new Intl.NumberFormat().format(numberValue); 
-        // TODO: FIX doesnt let you delete all numbers
     }
     renderInput(){
     switch (this.props.type) {
         case "number":
                 return (
                     // TODO: FIX responsive its showing regular keyboard, need to change it to numbers only
-                    <InputStyled value={this.props.value || ''} pattern="[0-9]+" onChange={this.checkNumbers.bind(this)} placeholder={this.props.placeholder ? this.props.placeholder : "Numbers Input"} />
+                    <InputStyled 
+                        value={this.props.value || ''} 
+                        pattern="[0-9]+" 
+                        onChange={this.checkNumbers.bind(this)} 
+                        placeholder={this.props.placeholder ? this.props.placeholder : "Numeric Input"} />
                 )
             break;
         default:
                 return (
-                    <InputStyled value={this.props.value || ''} onChange={(event) => this.props.handleChange(event.target.value)} placeholder={this.props.placeholder ? this.props.placeholder : "Text Input"} />
+                    <InputStyled 
+                        value={this.props.value || ''} 
+                        onChange={(event) => this.props.handleChange(event.target.value)} 
+                        placeholder={this.props.placeholder ? this.props.placeholder : "Text Input"} />
                 )
             break;
     }

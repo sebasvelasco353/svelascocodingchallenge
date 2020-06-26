@@ -1,13 +1,17 @@
 import React, { Component } from 'react'
 
-import { Button, Input } from 'svelascocodingchallenge'
+import { Button, Input, Select } from 'svelascocodingchallenge'
 import 'svelascocodingchallenge/dist/index.css'
 
 export default class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-      inputText: "",
+      singleSelectOptions: [
+        { value: 'MacbookPro', label: 'Macbook Pro' },
+        { value: 'DellXPS13_W', label: 'Dell XPS 13 (Windows)' },
+        { value: 'DellXPS13_U', label: 'Dell XPS 13 (Ubuntu)' }
+      ]
     }
   }
   handleInputChange(text) {
@@ -20,6 +24,9 @@ export default class App extends Component {
     this.setState({
       inputNumber: number
     });
+  }
+  handleSingleSelectValueChange(selected){
+    console.log(selected);
   }
   render() {
     return (
@@ -38,6 +45,9 @@ export default class App extends Component {
         <div>
           <Input value={this.state.inputText} handleChange={this.handleInputChange.bind(this)} placeholder="Example Text Input"/>
           <Input type="number" value={this.state.inputNumber} handleChange={this.handleInputNumberChange.bind(this)} placeholder="Example number Input"/>
+        </div>
+        <div>
+          <Select value={this.state.singleSelectValue} options={this.state.singleSelectOptions} onChange={this.handleSingleSelectValueChange.bind(this)}/>
         </div>
       </div>
     )
