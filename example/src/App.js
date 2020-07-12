@@ -7,6 +7,12 @@ export default class App extends Component {
   constructor(props){
     super(props);
     this.state = {
+      selectValue: {
+        value: "MacbookPro",
+        label: "macbookPro"
+      },
+      inputNumber: '',
+      inputText: '',
       singleSelectOptions: [
         { value: 'MacbookPro', label: 'Macbook Pro' },
         { value: 'DellXPS13_W', label: 'Dell XPS 13 (Windows)' },
@@ -27,6 +33,7 @@ export default class App extends Component {
   }
   handleSingleSelectValueChange(selected){
     console.log(selected);
+    this.setState({selectValue: selected});
   }
   render() {
     return (
@@ -47,7 +54,7 @@ export default class App extends Component {
           <Input type="number" value={this.state.inputNumber} handleChange={this.handleInputNumberChange.bind(this)} placeholder="Example number Input"/>
         </div>
         <div>
-          <Select value={this.state.singleSelectValue} options={this.state.singleSelectOptions} onChange={this.handleSingleSelectValueChange.bind(this)}/>
+          <Select value={this.state.selectValue} options={this.state.singleSelectOptions} handleChange={this.handleSingleSelectValueChange.bind(this)}/>
         </div>
       </div>
     )

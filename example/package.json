@@ -12,6 +12,7 @@
   "dependencies": {
     "react": "file:../node_modules/react",
     "react-dom": "file:../node_modules/react-dom",
+    "react-redux": "^7.2.0",
     "react-scripts": "file:../node_modules/react-scripts",
     "svelascocodingchallenge": "file:.."
   },
