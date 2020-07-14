@@ -1,4 +1,4 @@
-# **svelascocodingchallenge V0.0.0**
+# **svelascocodingchallenge V1.0.0**
 
 > Coding Challenge created for mooveIt as part of the developer assessment
 
